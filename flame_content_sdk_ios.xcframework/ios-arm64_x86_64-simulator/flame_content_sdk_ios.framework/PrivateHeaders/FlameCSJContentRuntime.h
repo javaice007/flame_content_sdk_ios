@@ -31,6 +31,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable UIViewController *)drawFeedViewController;
 
+/// Phase 1 的独立嵌入式 Feed Container 创建路径；不影响旧 drawFeedViewController 行为。
+- (nullable UIViewController *)feedContainerViewController;
+
 @end
 
 NS_ASSUME_NONNULL_END

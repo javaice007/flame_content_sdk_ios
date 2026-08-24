@@ -1,53 +1,22 @@
-# Flame Content SDK
+# Flame Content SDK 0.2.0
 
-内容分发 + 激励广告一体化 iOS SDK，基于穿山甲内容栈与 Direct GroMore 聚合。
+This is the pre-release binary distribution package for Flame Content SDK 0.2.0.
+It contains the vendored XCFramework and release metadata only; it does not include SDK source,
+customer configuration, test fixtures, CocoaPods caches, or build archives.
 
-> 本仓库为 **Flame Content SDK 二进制分发仓库**（dist repo，对齐 flame_sdk_ios 发布模型）：
-> 仅包含 xcframework 与发布元数据；SDK 源码在独立源码仓库开发。版本通过 **Git Tag** 管理。
+## Contents
 
-## 当前版本
+- `flame_content_sdk_ios.xcframework`: iOS arm64 device slice and arm64/x86_64 simulator slice.
+- `Resources/`: resource delivery policy; customer configuration is supplied separately by Flame.
+- `Headers/`: public-header delivery policy; canonical headers are inside the XCFramework.
+- `flame_content_sdk_ios.podspec`: binary CocoaPods spec for the matching pre-release dist branch.
+- `SHA256SUMS`: SHA-256 manifest for all shipped files except the manifest itself.
 
-`0.1.0`（发布通道 `0.1.0-beta`）
+## Integration
 
-## 发布形态
+Use the matching `flame-specs` entry and CocoaPods. Do not copy framework slices manually or
+initialize third-party Content/Ads SDKs. Content functionality runs on arm64 devices; the simulator
+slice intentionally does not contain the Content runtime.
 
-| 组成 | 说明 |
-|---|---|
-| `flame_content_sdk_ios.xcframework` | 唯一二进制包（ios-arm64 真机含内容实现；simulator 切片为桩，内容 device-only） |
-| `README.md` / `CHANGELOG.md` / `LICENSE` / `VERSION` / `SHA256SUMS` | 发布元数据与完整性校验 |
-
-## 客户接入方式
-
-```ruby
-source 'https://github.com/javaice007/flame-specs.git'
-source 'https://cdn.cocoapods.org/'
-source 'https://github.com/volcengine/volcengine-specs.git'   # 内容栈三方源
-
-target 'YourApp' do
-  use_frameworks! :linkage => :static
-  pod 'flame_content_sdk_ios', '0.1.0'
-end
-```
-
-接入代码：
-
-```objc
-#import <flame_content_sdk_ios/flame_content_sdk_ios.h>
-```
-
-```swift
-import flame_content_sdk_ios
-```
-
-## 版本历史
-
-- `0.1.0`（通道 0.1.0-beta，2026-08-21）：首个二进制发布——初始化链路、内容三入口、
-  激励解锁、辅助能力（搜索/历史/收藏）、内容登录；详见 `CHANGELOG.md`。
-
-## 完整性校验
-
-```bash
-shasum -a 256 -c SHA256SUMS --ignore-missing
-```
-
-（覆盖 README/CHANGELOG/LICENSE/VERSION 与两切片主二进制。）
+Customer-specific `FlameCustomerConfig.bundle` is a controlled, separate delivery. Never add
+`sdk_setting_file.json`, credentials, or user data to this package.
