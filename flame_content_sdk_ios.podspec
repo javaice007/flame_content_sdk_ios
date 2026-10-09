@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name             = 'flame_content_sdk_ios'
-  s.version          = '0.2.0'
+  s.version          = '0.2.1'
   s.summary          = 'Flame Content SDK for iOS.'
   s.description      = 'Flame Content SDK: content capability plus Direct GroMore rewarded ads behind a single Flame-facing API.'
   s.homepage         = 'https://github.com/javaice007/flame_content_sdk_ios'
   s.license          = { :type => 'Proprietary', :text => 'Distribution terms are defined by Flame.' }
   s.author           = { 'Flame' => 'sdk@invalid.local' }
-  s.source           = { :git => 'https://github.com/javaice007/flame_content_sdk_ios.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/javaice007/flame_content_sdk_ios.git', :branch => 'pre-release/0.2.1' }
   s.ios.deployment_target = '13.0'
   s.requires_arc     = true
   s.module_name      = 'flame_content_sdk_ios'

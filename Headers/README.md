@@ -5,6 +5,7 @@ Canonical public headers and `module.modulemap` are packaged inside each XCFrame
 - `flame_content_sdk_ios.h`
 - `FlameContentSdk.h`
 - `FlameCallback.h`
+- `FlamePrivacyOptions.h`
 - `FlameRewardAd.h`
 - `FlameContentContainerViewController.h`
 - `FlameContentEntry.h`

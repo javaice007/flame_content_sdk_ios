@@ -1,6 +1,6 @@
-# Flame Content SDK 0.2.0
+# Flame Content SDK 0.2.1
 
-This is the immutable binary distribution package for Flame Content SDK 0.2.0.
+This is the pre-release binary distribution package for Flame Content SDK 0.2.1.
 It contains the vendored XCFramework and release metadata only; it does not include SDK source,
 customer configuration, test fixtures, CocoaPods caches, or build archives.
 
@@ -9,7 +9,7 @@ customer configuration, test fixtures, CocoaPods caches, or build archives.
 - `flame_content_sdk_ios.xcframework`: iOS arm64 device slice and arm64/x86_64 simulator slice.
 - `Resources/`: resource delivery policy; customer configuration is supplied separately by Flame.
 - `Headers/`: public-header delivery policy; canonical headers are inside the XCFramework.
-- `flame_content_sdk_ios.podspec`: binary CocoaPods spec for the matching immutable release tag.
+- `flame_content_sdk_ios.podspec`: binary CocoaPods spec for the matching pre-release dist branch.
 - `SHA256SUMS`: SHA-256 manifest for all shipped files except the manifest itself.
 
 ## Integration
