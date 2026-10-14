@@ -1,6 +1,6 @@
-# Flame Content SDK 0.2.1
+# Flame Content SDK 0.2.2
 
-This is the pre-release binary distribution package for Flame Content SDK 0.2.1.
+This is the pre-release binary distribution package for Flame Content SDK 0.2.2.
 It contains the vendored XCFramework and release metadata only; it does not include SDK source,
 customer configuration, test fixtures, CocoaPods caches, or build archives.
 
